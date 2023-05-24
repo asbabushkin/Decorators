@@ -4,7 +4,7 @@ Easy:
     функции суммирования.
 """
 
-CNT_EVEN = 0
+CNT = 0
 
 
 def summarize(*args):
@@ -13,7 +13,7 @@ def summarize(*args):
 
 def decorator_count(some_func):
     def inner(*args):
-        global CNT_EVEN
+        global CNT
         summa = some_func(*args)
         CNT += 1
         print(f'Функция суммирования запускалась {CNT} раз')

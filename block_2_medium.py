@@ -68,7 +68,9 @@ def decorator_get_length(func: Callable) -> Callable:
         print(f'Функция суммирования запускалась {CNT_LEN} раз.')
         print(f'Число {inner_result} является {len(str(inner_result))}-значным')
         return inner_result
+
     return inner
+
 
 result_len = decorator_get_length(summarize)
 print('Задание 1.2:')
@@ -77,7 +79,6 @@ print(result_len(1, 2, 3))
 print(result_len(100, 2, 3))
 print(result_len(1000, 138, 39))
 
-
 '''
 1.3 Функция принимает на вход любое количество аргументов и возвращает их среднее. Декоратор 
 вычисляет разницу между минимальным числом из данного набора и средним.
@@ -85,8 +86,10 @@ print(result_len(1000, 138, 39))
 
 CNT_AVG = 0
 
+
 def get_average(*args):
-    return round(sum(args)/len(args), 2)
+    return round(sum(args) / len(args), 2)
+
 
 def decorator_avg(func: Callable) -> Callable:
     def inner(*args):
@@ -96,9 +99,11 @@ def decorator_avg(func: Callable) -> Callable:
         print('***')
         print(f'Функция нахождения среднего запускалась {CNT_AVG} раз.')
         print(f'Для набора {args} среднеарифметическим является {inner_result}')
-        print(f'Минимальное число меньше среднеарифметического на {inner_result-min(args)}')
+        print(f'Минимальное число меньше среднеарифметического на {inner_result - min(args)}')
         return inner_result
+
     return inner
+
 
 result_diff = decorator_avg(get_average)
 
@@ -107,15 +112,16 @@ print(result_diff(1, 3, 5))
 print(result_diff(2, 3, 5))
 print(result_diff(0, 5, 28))
 
-
 """
 2. Написать функцию, внутри которой у нас будет объявляться наша функция суммирования и возвращаться
     в качестве результата работы из объемлющей функции.
 """
 
+
 def foo():
     def summarize(*args):
         return sum(args)
+
     return summarize
 
 
@@ -125,7 +131,7 @@ def foo():
 """
 
 result_sum = foo()
-print(result_sum) # будет напечатан адрес объекта локальной функции summarize в памяти
+print(result_sum)  # будет напечатан адрес объекта локальной функции summarize в памяти
 
 """
     4. Осуществите вызов функции суммирования из полученной переменной.
