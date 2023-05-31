@@ -4,5 +4,5 @@
 Лекция 2 https://youtu.be/WMYW3VxnEJY
 Лекция 3 https://youtu.be/Z8lgZsI9534
 Лекция 4 https://youtu.be/TmzxsZ-aDt0
-Лекция 5 https://youtu.be/PtXI_fp-UaY
-Лекция 6 
+Лекция 5 https://youtu.be/PtXI_fp-UaY from functools import wraps - декоратор для отображения имени декорируемой функции.
+Лекция 6 https://www.youtube.com/watch?v=OLGAEeo83bw применение декораторов, ООП подход.
